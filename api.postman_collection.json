@@ -1,0 +1,102 @@
+{
+	"info": {
+		"_postman_id": "755fb9a0-d141-4dc4-a711-5ec55c0c20a5",
+		"name": "Cocos Challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10048690"
+	},
+	"item": [
+		{
+			"name": "Get Portfolio",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/users/portfolio",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"portfolio"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Instruments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/instruments?q=sa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"instruments"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "sa"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Order",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"instrumentId\": 64,\n    \"size\": 10,\n    \"side\": \"BUY\",\n    \"type\": \"MARKET\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
